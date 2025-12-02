@@ -26,7 +26,7 @@ function getBase64String(data) {
 async function getUploadLocation(apikey, filename) {
     const sourcedata = getBase64String(JSON.stringify({ id: 'unique-document-id' }));
 
-    const url = new URL(`https://stagingapp.ivesk.lt/api/pub/uploadlocation/${encodeURIComponent(filename)}?${encodeURIComponent(sourcedata)}&processlines=false&splitdocuments=true&checkduplicates=true&rejectnoninvoices=true&warehouse=WHS&allocation=ALLOC&tags=tag1,tag2,tag3`);
+    const url = new URL(`https://app.ivesk.lt/api/pub/uploadlocation/${encodeURIComponent(filename)}?${encodeURIComponent(sourcedata)}&processlines=false&splitdocuments=true&checkduplicates=true&rejectnoninvoices=true&warehouse=WHS&allocation=ALLOC&tags=tag1,tag2,tag3`);
     const response = await fetch(url, {
         method: 'GET',
         headers: { 'x-api-key': apikey },
