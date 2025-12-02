@@ -9,4 +9,4 @@ To run these examples, you need:
 * Įvesk.lt API key. You can generate it here: [https://app.ivesk.lt/settings/general](https://app.ivesk.lt/settings/general)
 
 # Examples
-* [examples/file-upload.js](File upload)
+* [File upload](/examples/file-upload.js)
