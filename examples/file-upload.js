@@ -24,8 +24,8 @@ function getBase64String(data) {
  * @returns {UploadLocation}
  */
 async function getUploadLocation(apikey, filename) {
+    // None of the query params are required.
     const sourcedata = getBase64String(JSON.stringify({ id: 'unique-document-id', customdata: 'custom-data' }));
-
     const url = new URL(`https://app.ivesk.lt/api/pub/uploadlocation/${encodeURIComponent(filename)}?${encodeURIComponent(sourcedata)}&processlines=false&splitdocuments=true&checkduplicates=true&rejectnoninvoices=true&warehouse=WHS&allocation=ALLOC&tags=tag1,tag2,tag3`);
     const response = await fetch(url, {
         method: 'GET',
