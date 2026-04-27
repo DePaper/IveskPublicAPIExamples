@@ -27,7 +27,7 @@ async function getUploadLocation(apikey, filename) {
     // None of the query params are required.
     const sourcedata = getBase64String(JSON.stringify({ id: 'unique-document-id', customdata: 'custom-data' }));
     // warehouse=WHS & allocation=ALLOC are custom codes that can be added to document on upload
-    const url = new URL(`https://stagingapp.ivesk.lt/api/pub/uploadlocation/${encodeURIComponent(filename)}?sourcedata=${encodeURIComponent(sourcedata)}&processlines=false&splitdocuments=true&checkduplicates=true&rejectnoninvoices=true&warehouse=WHS&allocation=ALLOC&tags=tag1,tag2,tag3`);
+    const url = new URL(`https://app.ivesk.lt/api/pub/uploadlocation/${encodeURIComponent(filename)}?sourcedata=${encodeURIComponent(sourcedata)}&processlines=false&splitdocuments=true&checkduplicates=true&rejectnoninvoices=true&warehouse=WHS&allocation=ALLOC&tags=tag1,tag2,tag3`);
     const response = await fetch(url, {
         method: 'GET',
         headers: { 'x-api-key': apikey },
@@ -63,8 +63,7 @@ async function main() {
     const args = process.argv.slice(2);
     if (args.length < 2) {
         console.error('Usage: node file-upload.js <apikey> <path-to-file>');
-        return 1;
-    }
+        return 1;    }
 
     const apikey = args[0];
     const filepath = args[1];
