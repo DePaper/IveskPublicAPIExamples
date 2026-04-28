@@ -10,3 +10,4 @@ To run these examples, you need:
 
 # Examples
 * [File upload](/examples/file-upload.js)
+* [Columns pagination + incremental changes](/examples/columns-pagination.js)
