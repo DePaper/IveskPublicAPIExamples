@@ -63,7 +63,8 @@ async function main() {
     const args = process.argv.slice(2);
     if (args.length < 2) {
         console.error('Usage: node file-upload.js <apikey> <path-to-file>');
-        return 1;    }
+        return 1;
+    }
 
     const apikey = args[0];
     const filepath = args[1];
